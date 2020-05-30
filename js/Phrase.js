@@ -31,7 +31,7 @@
      for (let i = 0; i < this.phrase.length; i++){
      
      
-     if(this.phrase.charAt(i) !== '') {
+     if(this.phrase.charAt(i) !== ' ') {
       let listItem = createElement('li');
       listItem.className = "hide letter " + this.phrase.charAt(i);
       listItem.innerHTML = this.phrase.charAt(i);
