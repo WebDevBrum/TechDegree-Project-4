@@ -2,6 +2,8 @@
  * Project 4 - OOP Game App
  * app.js */
  
+ //TEST STATEMENTS
+ 
  //const phrase = new Phrase(); 
  //const game = new Game();
  
@@ -20,11 +22,12 @@
 
 //logPhrase(game.getRandomPhrase()); logPhrase(game.getRandomPhrase()); logPhrase(game.getRandomPhrase()); logPhrase(game.getRandomPhrase()); logPhrase(game.getRandomPhrase());
 
-const game = new Game();
+//const game = new Game();
  
-game.getRandomPhrase().addPhraseToDisplay();
+//game.getRandomPhrase().addPhraseToDisplay();
 
 //or
 
-
+//alternative method
 //const game = new Game(); const randomPhrase = game.getRandomPhrase(); const phrase = new Phrase(randomPhrase.phrase); phrase.addPhraseToDisplay();
+// END OF TEST STATEMENTS
