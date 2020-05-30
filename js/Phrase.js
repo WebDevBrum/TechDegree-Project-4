@@ -37,7 +37,7 @@
       listItem.innerHTML = this.phrase.charAt(i);
       phraseList.appendChild(listItem);
      
-     } else if (this.phrase.charAt(i) === '') {
+     } else if (this.phrase.charAt(i) === ' ') {
        let listItem = createElement('li');
        listItem.className = "space";
        phraseList.appendChild(listItem);
