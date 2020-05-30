@@ -29,9 +29,12 @@
     getRandomPhrase() {
       let num = Math.floor(Math.random() * this.phrases.length);
   
-  
-      return this.phrases[num]; 
+ // return this.phrases[num]; 
     
+    
+    //or??
+    let phrase = new Phrase(this.phrases[num].phrase);
+    return phrase;
     };
  }
  
