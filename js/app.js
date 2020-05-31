@@ -29,14 +29,36 @@
 //or
 
 //alternative method
-//const game = new Game(); const randomPhrase = game.getRandomPhrase(); const phrase = new Phrase(randomPhrase.phrase); phrase.addPhraseToDisplay();
+//const game = new Game(); const randomPhrase = game.getRandomPhrase(); 
+ //const phrase = new Phrase(randomPhrase.phrase); phrase.addPhraseToDisplay();
 
 
-const game = new Game();
- game.startGame(); 
- console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+//const game = new Game();
+ //game.startGame(); 
+// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
 
 
 
 // END OF TEST STATEMENTS
+
+let game ;
+const startGameBtn = document.getElementById('btn__reset');
+
+
+
+  startGameBtn.addEventListener('click', event => {
+      game = new Game();
+      game.startGame();
+   });
+
+
+
+
+
+/*
+Now that you’ve built the basics, head over to the app.js file. This is where you’ll create an event listener for the "Start Game" button that the user sees when they load your Phrase Hunter game.
+
+● Inside the app.js file, declare a new variable called `game` that’s not set to anything.
+
+● Then, add a "click" event listener to the HTML `<button>` element with an `id` of `btn__reset`. Inside the callback function for this click event listener, use your `game` variable to instantiate a new Game object. Call the `startGame()` method on this new Game object.*/

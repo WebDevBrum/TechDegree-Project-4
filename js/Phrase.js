@@ -36,7 +36,45 @@ class Phrase {
      }
     }
   }
-}
+  
+  /** * Checks if passed letter is in phrase * @param (string) letter - Letter to check */
+  
+   checkLetter(letter) {
+     
+     let phrase = game.activePhrase.phrase;
+     
+      for (let i = 0; i < phrase.length; i += 1) {
+      
+      if (phrase.charAt(i) === letter) {
+        
+        return true;
+        
+      } else {
+        return false;
+      }
+    }
+      
+   };
+   
+   /** * Displays passed letter on screen after a match is found * @param (string) letter - Letter to display */ 
+   
+   showMatchedLetter(letter) {
+   
+     let letterMatches = document.getElementsByClassName(`hide letter ${letter}`);
+   
+   
+     if(checkedLetter(letter)){
+       
+     letterMatches.className = `show letter ${letter}`;
+     }
+     
+    }
+     
+     
+ }
+   
+   
+
  
  
  /**
@@ -56,5 +94,24 @@ class Phrase {
         <li class="hide letter u">u</li>
     </ul>
 </div>
+ 
+ let letterButtons = document.querySelectorAll(".key");
+     let selected = '';
+     let phrase = game.activePhrase.phrase;
+     
+     for (let i = 0; i < letterButtons.length; i += 1) {
 
+      letterButtons[i].addEventListener('click', (e) => { 
+      
+       selected = e.target.innerHTML;
+      });
+     }
+ 
+const phraseDiv = document.getElementById("phrase");
+     let phraseLetters = phraseDiv.querySelector("ul").children;
+     
+     for (let i = 0; i < phraseLetters.length; i += 1) {
+     if (phraseLetter[i].className === (`hide letter ${letter}`)) {
+     
+       phraseLetter[i].className = `show letter ${letter}`;
 **/

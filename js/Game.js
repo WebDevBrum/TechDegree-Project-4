@@ -36,17 +36,40 @@ class Game {
 /** * Begins game by selecting a random phrase and displaying it to user */ 
     
   startGame() {
-    
-   //const game = new Game();
-   const overlay = document.getElementById('overlay');
-   overlay. style.display = 'none';
+    const overlay = document.getElementById('overlay');
+    overlay. style.display = 'none';
    
-   this.activePhrase = this.getRandomPhrase();
-   this.activePhrase.addPhraseToDisplay();
+    this.activePhrase = this.getRandomPhrase();
+    this.activePhrase.addPhraseToDisplay();
+  }
     
-    };
-    
-   /** The `startGame()` method hides the start screen overlay (the `div` element with an `id` of `overlay`), calls the `getRandomPhrase()` method to select a Phrase object from the Game object’s array of phrases, and then adds the phrase to the gameboard by calling the `addPhraseToDisplay()` method (which is a method on the Phrase class) on the selected Phrase object. The selected phrase should be stored in the Game’s `activePhrase` property, so it can be easily accessed throughout the game. **/
+   /** * Handles interaction, logic and behaviour*/
+   
+   handleInteraction() {
+   
+   
+   }
+   
+   /** * Checks for winning move * @return {boolean} True if game has been won, false if game wasn't won */ 
+   
+   checkForWin() {
+   
+   }
+   
+   /** * Increases the value of the missed property * Removes a life from the scoreboard * Checks if player has remaining lives and ends game if player is out */ 
+   
+   removeLife() {
+   
+   };
+   
+   
+   /** * Displays game over message * @param {boolean} gameWon - Whether or not the user won the game */ 
+   
+   gameOver(gameWon) {
+   
+   }
+   
+   
  }
  
  
