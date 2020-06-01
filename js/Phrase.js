@@ -40,18 +40,21 @@ class Phrase {
   /** * Checks if passed letter is in phrase * @param (string) letter - Letter to check */
   
    checkLetter(letter) {
+   
+   //RETHINK HERE , PHRASE IS CONSTRUCTED
      
-     let phrase = game.activePhrase.phrase;
+     //let phrase = game.activePhrase.phrase; //done
      
-      for (let i = 0; i < phrase.length; i += 1) {
+      for (let i = 0; i < this.phrase.length; i += 1) {
       
-      if (phrase.charAt(i) === letter) {
+      if (this.phrase.charAt(i) === letter) {
         
         return true;
         
-      } else {
-        return false;
+      } 
+        
       }
+      return false;
     }
       
    };
