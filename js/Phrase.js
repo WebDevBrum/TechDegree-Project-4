@@ -57,7 +57,7 @@ class Phrase {
       return false;
     }
       
-   };
+   
    
    /** * Displays passed letter on screen after a match is found * @param (string) letter - Letter to display */ 
    
@@ -73,8 +73,8 @@ class Phrase {
      
     }
      
-     
- }
+  }    
+ 
    
    
 
