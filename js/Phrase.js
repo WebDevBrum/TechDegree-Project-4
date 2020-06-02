@@ -65,12 +65,12 @@ class Phrase {
    
      let letterMatches = document.getElementsByClassName(`hide letter ${letter}`);
    
-   
-     if(checkedLetter(letter)){
+    for (let i =0; i < letterMatches.length; i++){
+     if(this.checkLetter(letter)){
        
-     letterMatches.className = `show letter ${letter}`;
+     letterMatches[i].className = `show letter ${letter}`;
      }
-     
+    }
     }
      
   }    
