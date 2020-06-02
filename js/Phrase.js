@@ -62,11 +62,12 @@ class Phrase {
    /** * Displays passed letter on screen after a match is found * @param (string) letter - Letter to display */ 
    
    showMatchedLetter(letter) {
-   
+    if(this.checkLetter(letter)){
+       
      let letterMatches = document.getElementsByClassName(`hide letter ${letter}`);
-   
-    for (let i =0; i < letterMatches.length; i++){
-     if(this.checkLetter(letter)){
+   console.log(letterMatches);
+    for (let i = 0; i < letterMatches.length; i+= 1){
+     
        
      letterMatches[i].className = `show letter ${letter}`;
      }
@@ -74,7 +75,7 @@ class Phrase {
     }
      
   }    
- 
+
    
    
 
