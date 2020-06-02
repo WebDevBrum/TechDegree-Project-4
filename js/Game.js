@@ -37,7 +37,7 @@ class Game {
     
   startGame() {
     const overlay = document.getElementById('overlay');
-    overlay. style.display = 'none';
+    overlay.style.display = 'none';
    
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
@@ -72,6 +72,16 @@ class Game {
    
    removeLife() {
    
+    let lives = document.querySelectorAll(".tries");
+    
+    lives[this.missed].src = "lostHeart.png";
+    
+    this.missed += 1;
+    
+    if (this.missed === 5) {
+    
+     this.gameOver(false);
+    }
    
    
    };
@@ -80,6 +90,29 @@ class Game {
    /** * Displays game over message * @param {boolean} gameWon - Whether or not the user won the game */ 
    
    gameOver(gameWon) {
+   
+   const overlay = document.getElementById('overlay');
+   let headerMessage = document.getElementById("game-over-message");
+   
+   if (gameWon) {
+   
+   
+    overlay.style.display = '';
+    overlay.className = "win";
+    headerMessage.innerHTML = "Winner winner chicken dinner";
+    
+  
+    } else if (gameWon === false) {
+    
+    overlay.style.display = '';
+    overlay.className = "lose";
+    headerMessage.innerHTML = "You lose, loser";
+    
+    }
+   
+   //if gamewon is false display lost message
+   //if gamewon is true display win message
+   
    
    }
    
