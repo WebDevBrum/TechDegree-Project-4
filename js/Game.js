@@ -54,11 +54,25 @@ class Game {
    
    checkForWin() {
    
+     let phraseLetters = document.querySelectorAll(".letter");
+     
+     for (let i = 0; i < phraseLetters.length; i++) {
+       
+       if (phraseLetters[i].classList.contains("hide")) {
+         return false;
+         } else {
+           return true;
+         }
+     	
+     }
+   
    }
    
    /** * Increases the value of the missed property * Removes a life from the scoreboard * Checks if player has remaining lives and ends game if player is out */ 
    
    removeLife() {
+   
+   
    
    };
    
