@@ -55,27 +55,33 @@ class Game {
    checkForWin() {
    
      let phraseLetters = document.querySelectorAll(".letter");
-     
+     console.log(phraseLetters);
+
      for (let i = 0; i < phraseLetters.length; i++) {
        
        if (phraseLetters[i].classList.contains("hide")) {
+         console.log(phraseLetters[i].classList);
          return false;
-         } else {
-           return true;
-         }
-     	
+         } 
+          
+        }
+         
+         return true;
      }
    
-   }
+  
    
    /** * Increases the value of the missed property * Removes a life from the scoreboard * Checks if player has remaining lives and ends game if player is out */ 
    
    removeLife() {
    
-    let lives = document.querySelectorAll(".tries");
-    
-    lives[this.missed].src = "lostHeart.png";
-    
+    let lives = document.querySelectorAll(".tries img");
+   
+    console.log(lives);
+   console.log(this.missed);
+    console.log(lives[this.missed].src);
+    lives[this.missed].src = "images/lostHeart.png";
+    console.log(lives[this.missed].src);
     this.missed += 1;
     
     if (this.missed === 5) {
