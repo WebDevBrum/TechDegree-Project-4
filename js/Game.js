@@ -49,11 +49,40 @@ class Game {
 		
 		}
 		
+		//enable keyboard buttons and chage class to key
+		
+		const keyButtons = document.querySelectorAll('.key, .wrong, .chosen ');
+
+for (let i = 0; i < keyButtons.length; i++) {
+
+keyButtons[i].disabled = false;
+keyButtons[i].className = 'key';
+
+}
+
+//reset scorebard images 
+		//reset missed total
+		
+		this.missed = 0;
+		
+		
+		let lives = document.querySelectorAll(".tries img");
+		
+		for (let i = 0; i < lives.length; i ++) {
+   
+    lives[i].src = "images/liveHeart.png";
+		
+}
+		
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
-		//enable keyboard buttons and chage class to key
-		//reset scorebard images 
-		//reset missed total
+    
+    
+		
+		
+		
+		
+		
   }
     
    /** * Handles interaction, logic and behaviour*/
