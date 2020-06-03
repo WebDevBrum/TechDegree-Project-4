@@ -40,6 +40,15 @@ class Game {
     overlay.style.display = 'none';
    
 		//remove ul elements
+		const phraseList = document.getElementById("phrase").querySelector("ul");
+		//const phraseList = phraseDiv.querySelector("ul");
+		
+		while (phraseList.firstChild) {
+			
+			phraseList.removeChild(phraseList.firstChild);
+		
+		}
+		
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
 		//enable keyboard buttons and chage class to key

@@ -17,6 +17,7 @@ class Phrase {
      }
    
    const phraseDiv = document.getElementById("phrase");
+	 
    const phraseList = phraseDiv.querySelector("ul");
     
    for (let i = 0; i < this.phrase.length; i++){
