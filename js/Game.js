@@ -77,19 +77,13 @@ class Game {
    
     let lives = document.querySelectorAll(".tries img");
    
-    console.log(lives);
-   console.log(this.missed);
-    console.log(lives[this.missed].src);
     lives[this.missed].src = "images/lostHeart.png";
-    console.log(lives[this.missed].src);
+    
     this.missed += 1;
     
     if (this.missed === 5) {
-    
-     this.gameOver(false);
+      this.gameOver(false);
     }
-   
-   
    };
    
    
@@ -97,32 +91,21 @@ class Game {
    
    gameOver(gameWon) {
    
-   const overlay = document.getElementById('overlay');
-   let headerMessage = document.getElementById("game-over-message");
+     const overlay = document.getElementById('overlay');
+     let headerMessage = document.getElementById("game-over-message");
    
-   if (gameWon) {
-   
-   
-    overlay.style.display = '';
-    overlay.className = "win";
-    headerMessage.innerHTML = "Winner winner chicken dinner";
+     if (gameWon) {
+       overlay.style.display = '';
+       overlay.className = "win";
+       headerMessage.innerHTML = "Winner winner chicken dinner";
     
-  
-    } else if (gameWon === false) {
+     } else if (gameWon === false) {
     
-    overlay.style.display = '';
-    overlay.className = "lose";
-    headerMessage.innerHTML = "You lose, loser";
-    
-    }
-   
-   //if gamewon is false display lost message
-   //if gamewon is true display win message
-   
-   
+       overlay.style.display = '';
+       overlay.className = "lose";
+       headerMessage.innerHTML = "You lose, loser";
    }
-   
-   
- }
+  }
+}
  
  
