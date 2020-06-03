@@ -50,10 +50,20 @@ const startGameBtn = document.getElementById('btn__reset');
   startGameBtn.addEventListener('click', event => {
       game = new Game();
       game.startGame();
+      
    });
 
+const keyButtons = document.querySelectorAll('.key');
 
+for (let i = 0; i < keyButtons.length; i++) {
 
+keyButtons[i].addEventListener('click', event => {
+  
+   let button = event.target;
+  
+   game.handleInteraction(button);
+});
+}
 
 
 /*
