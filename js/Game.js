@@ -39,8 +39,12 @@ class Game {
     const overlay = document.getElementById('overlay');
     overlay.style.display = 'none';
    
+		//remove ul elements
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
+		//enable keyboard buttons and chage class to key
+		//reset scorebard images 
+		//reset missed total
   }
     
    /** * Handles interaction, logic and behaviour*/
@@ -54,6 +58,14 @@ class Game {
 		 if (checkLetter === false) {
 			 button.className = 'wrong';
 			 this.removeLife();
+		 } else if (checkLetter === true) {
+			 button.className ='chosen';
+			 this.activePhrase.showMatchedLetter(letter);
+			 let gameWon = this.checkForWin();
+			 
+			 if (gameWon) {
+				 this.gameOver(true);
+			 }
 		 }
 		 
    
