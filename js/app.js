@@ -59,9 +59,9 @@ for (let i = 0; i < keyButtons.length; i++) {
 
 keyButtons[i].addEventListener('click', event => {
   
-   let button = event.target;
+   const BUTTON = event.target;
   
-   game.handleInteraction(button);
+   game.handleInteraction(BUTTON);
 });
 }
 
