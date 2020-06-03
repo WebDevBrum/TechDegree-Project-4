@@ -47,6 +47,15 @@ class Game {
    
    handleInteraction(button) {
      console.log(button);
+		 button.disabled = true;
+		 let letter = button.innerHTML;
+		 let checkLetter = this.activePhrase.checkLetter(letter);
+		 console.log(checkLetter);
+		 if (checkLetter === false) {
+			 button.className = 'wrong';
+			 this.removeLife();
+		 }
+		 
    
    }
    
