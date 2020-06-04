@@ -1,6 +1,8 @@
 /* Main styles */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 /* Variables */
 
 :root {
@@ -20,7 +22,8 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  /*font-family: 'Montserrat', sans-serif;*/
+	font-family: 'Permanent Marker', cursive;
 }
 
 body {
