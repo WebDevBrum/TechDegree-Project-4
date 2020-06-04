@@ -12,13 +12,13 @@ class Phrase {
   addPhraseToDisplay() {
   
     function createElement(elementName) {
-      const element = document.createElement(elementName);
-      return element;
+      const ELEMENT = document.createElement(elementName);
+      return ELEMENT;
      }
    
-   const phraseDiv = document.getElementById("phrase");
+   const PHRASE_DIV = document.getElementById("phrase");
 	 
-   const phraseList = phraseDiv.querySelector("ul");
+   const PHRASE_LIST = PHRASE_DIV.querySelector("ul");
     
    for (let i = 0; i < this.phrase.length; i++){
      
@@ -27,13 +27,13 @@ class Phrase {
        let listItem = createElement('li');
        listItem.className = "hide letter " + this.phrase.charAt(i);
        listItem.innerHTML = this.phrase.charAt(i);
-       phraseList.appendChild(listItem);
+       PHRASE_LIST.appendChild(listItem);
      
      } else if (this.phrase.charAt(i) === ' ') {
      
        let listItem = createElement('li');
        listItem.className = "space";
-       phraseList.appendChild(listItem);
+       PHRASE_LIST.appendChild(listItem);
      }
     }
   }

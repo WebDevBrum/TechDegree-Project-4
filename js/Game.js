@@ -12,14 +12,14 @@ class Game {
 /** * Creates phrases for use in game * @return {array} An array of phrases that could be used in the game */ 
    
   createPhrases() {
-    const phrases = [
+    const PHRASES = [
       { phrase: "Cat got your tongue"},
       { phrase: "Laughter is the best medicine" },
       { phrase: "What goes around comes around" },
       { phrase: "Dont cry over spilled milk"},
       { phrase: "A diamond in the rough"}
      ]
-      return phrases;
+      return PHRASES;
     }
     
 /** * Selects random phrase from phrases property * @return {Object} Phrase object chosen to be used */ 
@@ -36,41 +36,40 @@ class Game {
 /** * Begins game by selecting a random phrase and displaying it to user */ 
     
   startGame() {
-    const overlay = document.getElementById('overlay');
-    overlay.style.display = 'none';
+    const OVERLAY = document.getElementById('overlay');
+    OVERLAY.style.display = 'none';
    
-		//remove ul elements
-		const phraseList = document.getElementById("phrase").querySelector("ul");
-		//const phraseList = phraseDiv.querySelector("ul");
 		
-		while (phraseList.firstChild) {
+		const PHRASELIST = document.getElementById("phrase").querySelector("ul");
+		
+		
+		while (PHRASELIST.firstChild) {
 			
-			phraseList.removeChild(phraseList.firstChild);
+			PHRASELIST.removeChild(PHRASELIST.firstChild);
 		
 		}
 		
-		//enable keyboard buttons and chage class to key
 		
-		const keyButtons = document.querySelectorAll('.key, .wrong, .chosen ');
+		
+		const KEY_BUTTONS = document.querySelectorAll('.key, .wrong, .chosen ');
 
-keyButtons.forEach (button => {
+KEY_BUTTONS.forEach (button => {
 
 button.disabled = false;
 button.className = 'key';
 
 });
 
-//reset scorebard images 
-		//reset missed total
+
 		
 		this.missed = 0;
 		
 		
-		let lives = document.querySelectorAll(".tries img");
+		const LIVES = document.querySelectorAll(".tries img");
 		
-	lives.forEach(life => {
+	LIVES.forEach(life => {
    
-    life.src = "images/liveHeart.png";
+    LIVES.src = "images/liveHeart.png";
 		
 });
 		
