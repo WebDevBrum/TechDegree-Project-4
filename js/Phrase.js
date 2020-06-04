@@ -24,16 +24,16 @@ class Phrase {
      
      if (this.phrase.charAt(i) !== ' ') {
      
-       let listItem = createElement('li');
-       listItem.className = "hide letter " + this.phrase.charAt(i);
-       listItem.innerHTML = this.phrase.charAt(i);
-       PHRASE_LIST.appendChild(listItem);
+       const LIST_ITEM = createElement('li');
+       LIST_ITEM.className = "hide letter " + this.phrase.charAt(i);
+       LIST_ITEM.innerHTML = this.phrase.charAt(i);
+       PHRASE_LIST.appendChild(LIST_ITEM);
      
      } else if (this.phrase.charAt(i) === ' ') {
      
-       let listItem = createElement('li');
-       listItem.className = "space";
-       PHRASE_LIST.appendChild(listItem);
+       const LIST_ITEM = createElement('li');
+       LIST_ITEM.className = "space";
+       PHRASE_LIST.appendChild(LIST_ITEM);
      }
     }
   }
