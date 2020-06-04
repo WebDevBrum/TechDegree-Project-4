@@ -62,23 +62,29 @@ keyButtons.forEach(button => {
 button.addEventListener('click', event => {
   
    const BUTTON = event.target;
-  
+  console.log(BUTTON);
    game.handleInteraction(BUTTON);
 });
 
-button.addEventListener('keydown', event => {
+
+
+
+});
+
+document.addEventListener('keydown', event => {
 	const KBUTTON = event.key;
-	
-	console.log(KBUTTON);
-	
-	game.handleInteraction(KBUTTON);
-	
+   
+   
+   
+   
+   for (let i = 0; i < keyButtons.length; i++ ){
+   
+    if ((KBUTTON.toString() === keyButtons[i].innerHTML) && (keyButtons[i].disabled !== true) )  {
+console.log(keyButtons[i]);
+
+	game.handleInteraction(keyButtons[i]);}
+   }
 });
-
-
-});
-
-
 /*
 Now that you’ve built the basics, head over to the app.js file. This is where you’ll create an event listener for the "Start Game" button that the user sees when they load your Phrase Hunter game.
 

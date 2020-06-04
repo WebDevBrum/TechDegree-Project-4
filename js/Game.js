@@ -92,7 +92,8 @@ button.className = 'key';
 		 button.disabled = true;
 		 let letter = button.innerHTML;
 		 let checkLetter = this.activePhrase.checkLetter(letter);
-		 
+     
+     
 		 if (checkLetter === false) {
 			 button.className = 'wrong';
 			 this.removeLife();
@@ -106,7 +107,7 @@ button.className = 'key';
 			 }
 		 }
 		 
-   
+    
    }
    
    /** * Checks for winning move * @return {boolean} True if game has been won, false if game wasn't won */ 
