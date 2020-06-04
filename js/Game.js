@@ -25,9 +25,9 @@ class Game {
 /** * Selects random phrase from phrases property * @return {Object} Phrase object chosen to be used */ 
     
   getRandomPhrase() {
-    let num = Math.floor(Math.random() * this.phrases.length);
-    let phrase = new Phrase(this.phrases[num].phrase);
-    return phrase;
+    const NUM = Math.floor(Math.random() * this.phrases.length);
+    const PHRASE = new Phrase(this.phrases[NUM].phrase);
+    return PHRASE;
     
     //or and test with alternstive method
     //return this.phrases[num];
@@ -90,16 +90,16 @@ button.className = 'key';
    handleInteraction(button) {
      
 		 button.disabled = true;
-		 let letter = button.innerHTML;
-		 let checkLetter = this.activePhrase.checkLetter(letter);
+		 const LETTER = button.innerHTML;
+		 const CHECK_LETTER = this.activePhrase.checkLetter(LETTER);
      
      
-		 if (checkLetter === false) {
+		 if (CHECK_LETTER === false) {
 			 button.className = 'wrong';
 			 this.removeLife();
-		 } else if (checkLetter === true) {
+		 } else if (CHECK_LETTER === true) {
 			 button.className ='chosen';
-			 this.activePhrase.showMatchedLetter(letter);
+			 this.activePhrase.showMatchedLetter(LETTER);
 			 let gameWon = this.checkForWin();
 			 
 			 if (gameWon) {
@@ -114,12 +114,12 @@ button.className = 'key';
    
    checkForWin() {
    
-     let phraseLetters = document.querySelectorAll(".letter");
+     const PHRASE_LETTERS = document.querySelectorAll(".letter");
      
 
-  for (let i = 0; i < phraseLetters.length; i++) {
+  for (let i = 0; i < PHRASE_LETTERS.length; i++) {
        
-       if (phraseLetters[i].classList.contains("hide")) {
+       if (PHRASE_LETTERS[i].classList.contains("hide")) {
          
          return false;
          } 
@@ -135,9 +135,9 @@ button.className = 'key';
    
    removeLife() {
    
-    let lives = document.querySelectorAll(".tries img");
+    const LIVES = document.querySelectorAll(".tries img");
    
-    lives[this.missed].src = "images/lostHeart.png";
+    LIVES[this.missed].src = "images/lostHeart.png";
     
     this.missed += 1;
     
@@ -151,19 +151,19 @@ button.className = 'key';
    
    gameOver(gameWon) {
    
-     const overlay = document.getElementById('overlay');
-     let headerMessage = document.getElementById("game-over-message");
+     const OVERLAY = document.getElementById('overlay');
+     const HEADER_MESSAGE = document.getElementById("game-over-message");
    
      if (gameWon) {
-       overlay.style.display = '';
-       overlay.className = "win";
-       headerMessage.innerHTML = "Goodnight Seattle, we love you!!";
+       OVERLAY.style.display = '';
+       OVERLAY.className = "win";
+       HEADER_MESSAGE.innerHTML = "Goodnight Seattle, we love you!!";
     
      } else if (gameWon === false) {
     
-       overlay.style.display = '';
-       overlay.className = "lose";
-       headerMessage.innerHTML = "Phraser has left the building!!";
+       OVERLAY.style.display = '';
+       OVERLAY.className = "lose";
+       HEADER_MESSAGE.innerHTML = "Phraser has left the building!!";
    }
   }
 }
