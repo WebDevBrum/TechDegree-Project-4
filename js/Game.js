@@ -53,12 +53,12 @@ class Game {
 		
 		const keyButtons = document.querySelectorAll('.key, .wrong, .chosen ');
 
-for (let i = 0; i < keyButtons.length; i++) {
+keyButtons.forEach (button => {
 
-keyButtons[i].disabled = false;
-keyButtons[i].className = 'key';
+button.disabled = false;
+button.className = 'key';
 
-}
+});
 
 //reset scorebard images 
 		//reset missed total
@@ -68,11 +68,11 @@ keyButtons[i].className = 'key';
 		
 		let lives = document.querySelectorAll(".tries img");
 		
-		for (let i = 0; i < lives.length; i ++) {
+	lives.forEach(life => {
    
-    lives[i].src = "images/liveHeart.png";
+    life.src = "images/liveHeart.png";
 		
-}
+});
 		
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
@@ -88,11 +88,11 @@ keyButtons[i].className = 'key';
    /** * Handles interaction, logic and behaviour*/
    
    handleInteraction(button) {
-     console.log(button);
+     
 		 button.disabled = true;
 		 let letter = button.innerHTML;
 		 let checkLetter = this.activePhrase.checkLetter(letter);
-		 console.log(checkLetter);
+		 
 		 if (checkLetter === false) {
 			 button.className = 'wrong';
 			 this.removeLife();
@@ -114,12 +114,12 @@ keyButtons[i].className = 'key';
    checkForWin() {
    
      let phraseLetters = document.querySelectorAll(".letter");
-     console.log(phraseLetters);
+     
 
-     for (let i = 0; i < phraseLetters.length; i++) {
+  for (let i = 0; i < phraseLetters.length; i++) {
        
        if (phraseLetters[i].classList.contains("hide")) {
-         console.log(phraseLetters[i].classList);
+         
          return false;
          } 
           

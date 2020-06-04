@@ -55,15 +55,28 @@ const startGameBtn = document.getElementById('btn__reset');
 
 const keyButtons = document.querySelectorAll('.key');
 
-for (let i = 0; i < keyButtons.length; i++) {
+keyButtons.forEach(button => {
 
-keyButtons[i].addEventListener('click', event => {
+//for (let i = 0; i < keyButtons.length; i++) {
+
+button.addEventListener('click', event => {
   
    const BUTTON = event.target;
   
    game.handleInteraction(BUTTON);
 });
-}
+
+button.addEventListener('keydown', event => {
+	const KBUTTON = event.key;
+	
+	console.log(KBUTTON);
+	
+	game.handleInteraction(KBUTTON);
+	
+});
+
+
+});
 
 
 /*

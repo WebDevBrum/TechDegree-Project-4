@@ -68,10 +68,10 @@ class Phrase {
    
     if (this.checkLetter(letter)){ //may not require this bit.
        
-      for (let i = 0; i < letterMatches.length; i++){
+ letterMatches.forEach(letterMatch => {
     
-       letterMatches[i].className = "show letter " + letter;
-      }
+       letterMatch.className = "show letter " + letter;
+      });
     }
   }
      
