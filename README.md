@@ -7,13 +7,13 @@
  
  Font Change 
  
- @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
- 
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
  
  * {
   box-sizing: border-box;
   /*font-family: 'Montserrat', sans-serif;*/
-	font-family: 'Permanent Marker', cursive;
+	font-family: 'Special Elite', cursive;
 }
 
 Outside to that , background color changed to start screen and the game screen
