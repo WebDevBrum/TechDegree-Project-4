@@ -157,13 +157,13 @@ button.className = 'key';
      if (gameWon) {
        overlay.style.display = '';
        overlay.className = "win";
-       headerMessage.innerHTML = "Winner winner chicken dinner";
+       headerMessage.innerHTML = "Goodnight Seattle, we love you!!";
     
      } else if (gameWon === false) {
     
        overlay.style.display = '';
        overlay.className = "lose";
-       headerMessage.innerHTML = "You lose, loser";
+       headerMessage.innerHTML = "Phraser has left the building!!";
    }
   }
 }

@@ -1,12 +1,12 @@
 /* Main styles */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
+  --color-win: #14a098;
   --color-lose: #D94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
@@ -23,7 +23,7 @@
 * {
   box-sizing: border-box;
   /*font-family: 'Montserrat', sans-serif;*/
-	font-family: 'Permanent Marker', cursive;
+	font-family: 'Special Elite', cursive;
 }
 
 body {
@@ -31,6 +31,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+	background-color: #cb2d6f;
   
 }
 
@@ -90,7 +91,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: white;
 }
 
 
@@ -184,7 +185,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #501f3a;
 }
 
 .start a {
@@ -200,7 +201,7 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #c3073f;
 }
 
 .lose a {
