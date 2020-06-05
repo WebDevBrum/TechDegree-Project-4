@@ -18,7 +18,7 @@ class Game {
       { phrase: "What goes around comes around" },
       { phrase: "Dont cry over spilled milk"},
       { phrase: "A diamond in the rough"},
-      { phrase: "All for one, and one for all"},
+      { phrase: "All for one and one for all"},
       { phrase: "Read between the lines"},
       { phrase: "The calm before the storm"},
       { phrase: "Every cloud has a silver lining"},
