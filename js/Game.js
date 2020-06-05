@@ -17,7 +17,12 @@ class Game {
       { phrase: "Laughter is the best medicine" },
       { phrase: "What goes around comes around" },
       { phrase: "Dont cry over spilled milk"},
-      { phrase: "A diamond in the rough"}
+      { phrase: "A diamond in the rough"},
+      { phrase: "All for one, and one for all"},
+      { phrase: "Read between the lines"},
+      { phrase: "The calm before the storm"},
+      { phrase: "Every cloud has a silver lining"},
+      { phrase: "All that glitters isnt gold"}
      ]
       return PHRASES;
     }
@@ -28,70 +33,41 @@ class Game {
     const NUM = Math.floor(Math.random() * this.phrases.length);
     const PHRASE = new Phrase(this.phrases[NUM].phrase);
     return PHRASE;
-    
-    //or and test with alternstive method
-    //return this.phrases[num];
-   }
+  }
     
 /** * Begins game by selecting a random phrase and displaying it to user */ 
     
   startGame() {
     const OVERLAY = document.getElementById('overlay');
+    const PHRASELIST = document.getElementById("phrase").querySelector("ul");
+    const LIVES = document.querySelectorAll(".tries img");
+    const KEY_BUTTONS = document.querySelectorAll('.key, .wrong, .chosen ');
     OVERLAY.style.display = 'none';
-   
-		
-		const PHRASELIST = document.getElementById("phrase").querySelector("ul");
-		
-		
+    this.missed = 0;
+    
 		while (PHRASELIST.firstChild) {
-			
-			PHRASELIST.removeChild(PHRASELIST.firstChild);
-		
+		  PHRASELIST.removeChild(PHRASELIST.firstChild);
 		}
 		
-		
-		
-		const KEY_BUTTONS = document.querySelectorAll('.key, .wrong, .chosen ');
+    KEY_BUTTONS.forEach (button => {
 
-KEY_BUTTONS.forEach (button => {
+      button.disabled = false;
+      button.className = 'key';
+    });
 
-button.disabled = false;
-button.className = 'key';
-
-});
-
-
-		
-		this.missed = 0;
-		
-		
-		const LIVES = document.querySelectorAll(".tries img");
-		
-	LIVES.forEach(life => {
-   
-    LIVES.src = "images/liveHeart.png";
-		
-});
+    LIVES.forEach( life => { life.src = "images/liveHeart.png";});
 		
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
-    
-    
-		
-		
-		
-		
-		
   }
     
    /** * Handles interaction, logic and behaviour*/
    
    handleInteraction(button) {
      
-		 button.disabled = true;
 		 const LETTER = button.innerHTML;
 		 const CHECK_LETTER = this.activePhrase.checkLetter(LETTER);
-     
+     button.disabled = true;
      
 		 if (CHECK_LETTER === false) {
 			 button.className = 'wrong';
@@ -99,57 +75,43 @@ button.className = 'key';
 		 } else if (CHECK_LETTER === true) {
 			 button.className ='chosen';
 			 this.activePhrase.showMatchedLetter(LETTER);
-			 let gameWon = this.checkForWin();
+			 let GAME_WON = this.checkForWin();
 			 
-			 if (gameWon) {
-				 this.gameOver(true);
-			 }
+			   if (GAME_WON) {
+				   this.gameOver(true);
+			   }
 		 }
-		 
-    
-   }
+		}
    
    /** * Checks for winning move * @return {boolean} True if game has been won, false if game wasn't won */ 
    
    checkForWin() {
-   
      const PHRASE_LETTERS = document.querySelectorAll(".letter");
      
-
-  for (let i = 0; i < PHRASE_LETTERS.length; i++) {
+     for (let i = 0; i < PHRASE_LETTERS.length; i++) {
        
        if (PHRASE_LETTERS[i].classList.contains("hide")) {
-         
          return false;
-         } 
-          
-        }
-         
-         return true;
+       } 
      }
+       return true;
+    }
    
-  
-   
-   /** * Increases the value of the missed property * Removes a life from the scoreboard * Checks if player has remaining lives and ends game if player is out */ 
+ /** * Increases the value of the missed property * Removes a life from the scoreboard * Checks if player has remaining lives and ends game if player is out */ 
    
    removeLife() {
-   
-    const LIVES = document.querySelectorAll(".tries img");
-   
-    LIVES[this.missed].src = "images/lostHeart.png";
-    
-    this.missed += 1;
+     const LIVES = document.querySelectorAll(".tries img");
+     LIVES[this.missed].src = "images/lostHeart.png";
+     this.missed += 1;
     
     if (this.missed === 5) {
       this.gameOver(false);
     }
    };
    
-   
    /** * Displays game over message * @param {boolean} gameWon - Whether or not the user won the game */ 
    
    gameOver(gameWon) {
-   
      const OVERLAY = document.getElementById('overlay');
      const HEADER_MESSAGE = document.getElementById("game-over-message");
    
@@ -159,12 +121,11 @@ button.className = 'key';
        HEADER_MESSAGE.innerHTML = "Goodnight Seattle, we love you!!";
     
      } else if (gameWon === false) {
-    
        OVERLAY.style.display = '';
        OVERLAY.className = "lose";
        HEADER_MESSAGE.innerHTML = "Phraser has left the building!!";
+     }
    }
-  }
 }
  
  

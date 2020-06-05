@@ -6,31 +6,28 @@ class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();
   }
-   
-/** * Display phrase on game board */
+
+  /** * Display phrase on game board */
    
   addPhraseToDisplay() {
   
     function createElement(elementName) {
       const ELEMENT = document.createElement(elementName);
       return ELEMENT;
-     }
+    }
    
    const PHRASE_DIV = document.getElementById("phrase");
-	 
-   const PHRASE_LIST = PHRASE_DIV.querySelector("ul");
+	 const PHRASE_LIST = PHRASE_DIV.querySelector("ul");
     
-   for (let i = 0; i < this.phrase.length; i++){
+   for (let i = 0; i < this.phrase.length; i++) {
      
-     if (this.phrase.charAt(i) !== ' ') {
-     
-       const LIST_ITEM = createElement('li');
-       LIST_ITEM.className = "hide letter " + this.phrase.charAt(i);
-       LIST_ITEM.innerHTML = this.phrase.charAt(i);
-       PHRASE_LIST.appendChild(LIST_ITEM);
+    if (this.phrase.charAt(i) !== ' ') {
+      const LIST_ITEM = createElement('li');
+      LIST_ITEM.className = "hide letter " + this.phrase.charAt(i);
+      LIST_ITEM.innerHTML = this.phrase.charAt(i);
+      PHRASE_LIST.appendChild(LIST_ITEM);
      
      } else if (this.phrase.charAt(i) === ' ') {
-     
        const LIST_ITEM = createElement('li');
        LIST_ITEM.className = "space";
        PHRASE_LIST.appendChild(LIST_ITEM);
@@ -42,81 +39,32 @@ class Phrase {
   
    checkLetter(letter) {
    
-   //RETHINK HERE , PHRASE IS CONSTRUCTED
-     
-     //let phrase = game.activePhrase.phrase; //done
-     
-      for (let i = 0; i < this.phrase.length; i += 1) {
+     for (let i = 0; i < this.phrase.length; i += 1) {
       
-      if (this.phrase.charAt(i) === letter) {
-        
-        return true;
-        
-      } 
-        
+       if (this.phrase.charAt(i) === letter) {
+         return true;
+       } 
       }
-      return false;
+       return false;
     }
       
-   
-   
-   /** * Displays passed letter on screen after a match is found * @param (string) letter - Letter to display */ 
+  /** * Displays passed letter on screen after a match is found * @param (string) letter - Letter to display */ 
    
    showMatchedLetter(letter) {
-    
-    let letterMatches = document.querySelectorAll(`.${letter}`);
+     const LETTER_MATCHES = document.querySelectorAll(`.${letter}`);
    
-    if (this.checkLetter(letter)){ //may not require this bit.
-       
- letterMatches.forEach(letterMatch => {
-    
-       letterMatch.className = "show letter " + letter;
-      });
+     if (this.checkLetter(letter)){ 
+
+       LETTER_MATCHES.forEach(letterMatch => {
+         letterMatch.className = "show letter " + letter;
+       });
     }
-  }
-     
-  }    
+   }
+}    
 
    
    
 
  
  
- /**
  
- <div id="phrase" class="section">
-    <ul>
-        <li class="hide letter h">h</li>
-        <li class="hide letter o">o</li>
-        <li class="hide letter w">w</li>
-        <li class="space"> </li>
-        <li class="hide letter a">a</li>
-        <li class="hide letter r">r</li>
-        <li class="hide letter e">e</li>
-        <li class="space"> </li>
-        <li class="hide letter y">y</li>
-        <li class="hide letter o">o</li>
-        <li class="hide letter u">u</li>
-    </ul>
-</div>
- 
- let letterButtons = document.querySelectorAll(".key");
-     let selected = '';
-     let phrase = game.activePhrase.phrase;
-     
-     for (let i = 0; i < letterButtons.length; i += 1) {
-
-      letterButtons[i].addEventListener('click', (e) => { 
-      
-       selected = e.target.innerHTML;
-      });
-     }
- 
-const phraseDiv = document.getElementById("phrase");
-     let phraseLetters = phraseDiv.querySelector("ul").children;
-     
-     for (let i = 0; i < phraseLetters.length; i += 1) {
-     if (phraseLetter[i].className === (`hide letter ${letter}`)) {
-     
-       phraseLetter[i].className = `show letter ${letter}`;
-**/
