@@ -1,7 +1,13 @@
+---
+permalink: /index.html
+---
+
+
+
 # TechDegree-Project-4
  Gameshow App
-
- Browser-based, word guessing game: "Dr Phraser." Using JavaScript and OOP (Object-Oriented Programming) to select a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen keyboard.
+ 
+  Browser-based, word guessing game: "Dr Phraser." Using JavaScript and OOP (Object-Oriented Programming) to select a random, hidden phrase, which a player tries to guess, by clicking letters on an onscreen keyboard.
  They have 5 lives to guess correctly
  
  EXCEEDS EXPECTATIONS (criteria met)
