@@ -1,39 +1,37 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * app.js */
- 
- 
-let game ;
-const START_GAME_BTN = document.getElementById('btn__reset');
-const KEY_BUTTONS = document.querySelectorAll('.key');
+
+let game;
+const START_GAME_BTN = document.getElementById("btn__reset");
+const KEY_BUTTONS = document.querySelectorAll(".key");
 
 // Initialises a new game
-START_GAME_BTN.addEventListener('click', event => {
+START_GAME_BTN.addEventListener("click", (event) => {
   game = new Game();
   game.startGame();
 });
 
 // Converts letter button click to interaction
-KEY_BUTTONS.forEach(button => { button.addEventListener('click', event => {
-  
-  const BUTTON = event.target;
-  game.handleInteraction(BUTTON);
+KEY_BUTTONS.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const BUTTON = event.target;
+    game.handleInteraction(BUTTON);
   });
 });
 
 // Coverts keyboard click to interaction via on screen buttons
-document.addEventListener('keydown', event => {
-  
-   const KBUTTON = event.key.toLowerCase();
-   
-   for (let i = 0; i < KEY_BUTTONS.length; i++ ) {
-   
-     if ((KBUTTON.toString() === KEY_BUTTONS[i].innerHTML) && 
-        (KEY_BUTTONS[i].disabled !== true) )  {
+document.addEventListener("keydown", (event) => {
+  const KBUTTON = event.key.toLowerCase();
 
-       game.handleInteraction(KEY_BUTTONS[i]);
-     }
-   }
+  for (let i = 0; i < KEY_BUTTONS.length; i++) {
+    if (
+      KBUTTON.toString() === KEY_BUTTONS[i].innerHTML &&
+      KEY_BUTTONS[i].disabled !== true
+    ) {
+      game.handleInteraction(KEY_BUTTONS[i]);
+    }
+  }
 });
 
 /*
