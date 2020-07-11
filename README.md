@@ -2,7 +2,10 @@
 permalink: /index.html
 ---
 
+CONTENTS OF THIS FILE
+---------------------
 
+ * Introduction
 
 # TechDegree-Project-4
  Gameshow App
@@ -29,3 +32,14 @@ permalink: /index.html
 }
 
 Outside to that , background color changed to start screen and the game screen and page titles altered to personalise the app.
+
+color.
+ 
+ 
+ * Requirements
+ * Recommended modules
+ * Installation
+ * Configuration
+ * Troubleshooting
+ * FAQ
+ * Maintainers
