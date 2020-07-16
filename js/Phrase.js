@@ -15,18 +15,18 @@ class Phrase {
       return ELEMENT;
     }
 
-    const PHRASE_DIV = document.getElementById("phrase");
-    const PHRASE_LIST = PHRASE_DIV.querySelector("ul");
+    const PHRASE_DIV = document.getElementById('phrase');
+    const PHRASE_LIST = PHRASE_DIV.querySelector('ul');
 
-    for (let i = 0; i < this.phrase.length; i++) {
-      if (this.phrase.charAt(i) !== " ") {
-        const LIST_ITEM = createElement("li");
-        LIST_ITEM.className = "hide letter " + this.phrase.charAt(i);
+    for (let i = 0; i < this.phrase.length; i += 1) {
+      if (this.phrase.charAt(i) !== ' ') {
+        const LIST_ITEM = createElement('li');
+        LIST_ITEM.className = `hide letter ${this.phrase.charAt(i)}`;
         LIST_ITEM.innerHTML = this.phrase.charAt(i);
         PHRASE_LIST.appendChild(LIST_ITEM);
-      } else if (this.phrase.charAt(i) === " ") {
-        const LIST_ITEM = createElement("li");
-        LIST_ITEM.className = "space";
+      } else if (this.phrase.charAt(i) === ' ') {
+        const LIST_ITEM = createElement('li');
+        LIST_ITEM.className = 'space';
         PHRASE_LIST.appendChild(LIST_ITEM);
       }
     }
@@ -49,8 +49,8 @@ class Phrase {
     const LETTER_MATCHES = document.querySelectorAll(`.${letter}`);
 
     if (this.checkLetter(letter)) {
-      LETTER_MATCHES.forEach((letterMatch) => {
-        letterMatch.className = "show letter " + letter;
+      LETTER_MATCHES.forEach(letterMatch => {
+        letterMatch.className = `show letter ${letter}`;
       });
     }
   }

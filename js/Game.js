@@ -6,23 +6,23 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = this.createPhrases();
-    this.activePhrase = "null";
+    this.activePhrase = 'null';
   }
 
   /** * Creates phrases for use in game * @return {array} An array of phrases that could be used in the game */
 
   createPhrases() {
     const PHRASES = [
-      { phrase: "Cat got your tongue" },
-      { phrase: "Laughter is the best medicine" },
-      { phrase: "What goes around comes around" },
-      { phrase: "Dont cry over spilled milk" },
-      { phrase: "A diamond in the rough" },
-      { phrase: "All for one and one for all" },
-      { phrase: "Read between the lines" },
-      { phrase: "The calm before the storm" },
-      { phrase: "Every cloud has a silver lining" },
-      { phrase: "All that glitters isnt gold" },
+      { phrase: 'Cat got your tongue' },
+      { phrase: 'Laughter is the best medicine' },
+      { phrase: 'What goes around comes around' },
+      { phrase: 'Dont cry over spilled milk' },
+      { phrase: 'A diamond in the rough' },
+      { phrase: 'All for one and one for all' },
+      { phrase: 'Read between the lines' },
+      { phrase: 'The calm before the storm' },
+      { phrase: 'Every cloud has a silver lining' },
+      { phrase: 'All that glitters isnt gold' },
     ];
     return PHRASES;
   }
@@ -38,31 +38,31 @@ class Game {
   /** * Begins game by selecting a random phrase and displaying it to user */
 
   startGame() {
-    const OVERLAY = document.getElementById("overlay");
-    const PHRASELIST = document.getElementById("phrase").querySelector("ul");
-    const LIVES = document.querySelectorAll(".tries img");
-    const KEY_BUTTONS = document.querySelectorAll(".key, .wrong, .chosen ");
-    OVERLAY.style.display = "none";
+    const OVERLAY = document.getElementById('overlay');
+    const PHRASELIST = document.getElementById('phrase').querySelector('ul');
+    const LIVES = document.querySelectorAll('.tries img');
+    const KEY_BUTTONS = document.querySelectorAll('.key, .wrong, .chosen ');
+    OVERLAY.style.display = 'none';
     this.missed = 0;
 
     while (PHRASELIST.firstChild) {
       PHRASELIST.removeChild(PHRASELIST.firstChild);
     }
 
-    KEY_BUTTONS.forEach((button) => {
+    KEY_BUTTONS.forEach(button => {
       button.disabled = false;
-      button.className = "key";
+      button.className = 'key';
     });
 
-    LIVES.forEach((life) => {
-      life.src = "images/liveHeart.png";
+    LIVES.forEach(life => {
+      life.src = 'images/liveHeart.png';
     });
 
     this.activePhrase = this.getRandomPhrase();
     this.activePhrase.addPhraseToDisplay();
   }
 
-  /** * Handles interaction, logic and behaviour*/
+  /** * Handles interaction, logic and behaviour */
 
   handleInteraction(button) {
     const LETTER = button.innerHTML;
@@ -70,12 +70,12 @@ class Game {
     button.disabled = true;
 
     if (CHECK_LETTER === false) {
-      button.className = "wrong";
+      button.className = 'wrong';
       this.removeLife();
     } else if (CHECK_LETTER === true) {
-      button.className = "chosen";
+      button.className = 'chosen';
       this.activePhrase.showMatchedLetter(LETTER);
-      let GAME_WON = this.checkForWin();
+      const GAME_WON = this.checkForWin();
 
       if (GAME_WON) {
         this.gameOver(true);
@@ -86,10 +86,10 @@ class Game {
   /** * Checks for winning move * @return {boolean} True if game has been won, false if game wasn't won */
 
   checkForWin() {
-    const PHRASE_LETTERS = document.querySelectorAll(".letter");
+    const PHRASE_LETTERS = document.querySelectorAll('.letter');
 
-    for (let i = 0; i < PHRASE_LETTERS.length; i++) {
-      if (PHRASE_LETTERS[i].classList.contains("hide")) {
+    for (let i = 0; i < PHRASE_LETTERS.length; i += 1) {
+      if (PHRASE_LETTERS[i].classList.contains('hide')) {
         return false;
       }
     }
@@ -99,8 +99,8 @@ class Game {
   /** * Increases the value of the missed property * Removes a life from the scoreboard * Checks if player has remaining lives and ends game if player is out */
 
   removeLife() {
-    const LIVES = document.querySelectorAll(".tries img");
-    LIVES[this.missed].src = "images/lostHeart.png";
+    const LIVES = document.querySelectorAll('.tries img');
+    LIVES[this.missed].src = 'images/lostHeart.png';
     this.missed += 1;
 
     if (this.missed === 5) {
@@ -111,17 +111,17 @@ class Game {
   /** * Displays game over message * @param {boolean} gameWon - Whether or not the user won the game */
 
   gameOver(gameWon) {
-    const OVERLAY = document.getElementById("overlay");
-    const HEADER_MESSAGE = document.getElementById("game-over-message");
+    const OVERLAY = document.getElementById('overlay');
+    const HEADER_MESSAGE = document.getElementById('game-over-message');
 
     if (gameWon) {
-      OVERLAY.style.display = "";
-      OVERLAY.className = "win";
-      HEADER_MESSAGE.innerHTML = "Goodnight Seattle, we love you!!";
+      OVERLAY.style.display = '';
+      OVERLAY.className = 'win';
+      HEADER_MESSAGE.innerHTML = 'Goodnight Seattle, we love you!!';
     } else if (gameWon === false) {
-      OVERLAY.style.display = "";
-      OVERLAY.className = "lose";
-      HEADER_MESSAGE.innerHTML = "Phraser has left the building!!";
+      OVERLAY.style.display = '';
+      OVERLAY.className = 'lose';
+      HEADER_MESSAGE.innerHTML = 'Phraser has left the building!!';
     }
   }
 }
